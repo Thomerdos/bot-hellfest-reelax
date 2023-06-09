@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name          bot-hellfest-test
+// @name          bot-hellfest
 // @namespace     thomos
 // @version       0.1
-// @description   Achat automatique sur reelax ticket
-// @include       https://reelax-tickets.com/e/n/v-and-b-fest-2023/achat
+// @description   WIDGET_DESCRIPTION_HERE
+// @include       https://reelax-tickets.com/e/n/hellfest-2023/achat
 // @require      https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.min.js#sha256-/Q4ZPy6sMbk627wHxuaWSIXS1y7D2KnMhsm/+od7ptE=
 // ==/UserScript==
 (async function() {
@@ -30,10 +30,11 @@
         }
 
         const button = buttons[0]
-        if(buttons.length === 0 && !button.textContent.includes("Pass Vendredi")) {
+        if(buttons.length === 0 || !button?.textContent?.includes("Pass 4 jours du 15 au 18 juin 2023 ")) {
             console.log("Pas de pass 4 jours");
             return false
         }
+        await buttons[0].scrollIntoView()
         console.log(button)
 
         // // No available "Add to Cart" buttons. Cool down and refresh.
@@ -49,7 +50,7 @@
 
         const buyBtn = await document.getElementsByClassName('mat-focus-indicator table__card__button-div__button --buy mat-button mat-button-base ng-star-inserted')
 
-        if (buyBtn.length === 0  || !buyBtn[0].textContent.includes("Acheter")) {
+        if (buyBtn.length === 0  || !buyBtn[0]?.textContent.includes("Acheter")) {
             console.log("Bouton acheter introuvable");
             return false
         }
@@ -84,7 +85,7 @@
         console.log("Rechargement.");
         window.setTimeout(() => {
             window.location.reload(true);
-        }, 50);
+        }, 500);
     }
 
     if (await triggerClicks()) {
