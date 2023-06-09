@@ -18,6 +18,8 @@ Un script utilisant le plugin chrome tampermonkey permettant d'actualiser tout s
   * Clic auto sur le bouton suivant pour ajouter au panier
   * Notification sonore pour informer que l'ajout a été fait
 
+**Important : il faut bien rester sur la page pour que l'actualisation se fasse bien**
+
 ## Personnalisation
 
 Par défaut le script va chercher les pass 4 jours et appuyer sur le bouton acheter du premier lien en dessous.
