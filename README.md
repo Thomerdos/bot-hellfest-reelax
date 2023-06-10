@@ -8,7 +8,7 @@ Un script utilisant le plugin chrome tampermonkey permettant d'actualiser tout s
 * Dans le tableau de bord de l'extension, appuyer sur le "+" pour ajouter un nouveau script
 * Remplacer tout le contenu du script par défaut par le contenu du fichier suivant : https://github.com/Thomerdos/bot-hellfest-reelax/blob/main/script.js
 * Sauver le script (ctrl + S)
-* Se rendre sur la page suivante : https://reelax-tickets.com/e/n/v-and-b-fest-2023/achat
+* Se rendre sur la page suivante : https://reelax-tickets.com/e/n/hellfest-2023/achat
 * Cliquer quelque part sur la page (important sinon la notification sonore ne fonctionne pas)
 * Si tout va bien la page devrait se comporter de cette manière :
   * Rafraichissement automatique
