@@ -20,14 +20,12 @@ Un script utilisant le plugin chrome tampermonkey permettant d'actualiser tout s
 
 **Important : il faut bien rester sur la page pour que l'actualisation se fasse bien**
 
-## Personnalisation
+## Choix du jour / pass 4 jours
 
-Par défaut le script va chercher les pass 4 jours et appuyer sur le bouton acheter du premier lien en dessous.
-
-Il est possible de changer le pass demandé en changeant dans le script la ligne suivante en mettant le texte correspondant à là où on souhaite cliquer :
+Il suffit de changer à la ligne 12 le texte qui va être cherché par le bot, exemple : "Pass 4 jours", "Vendredi, "Samedi"...
 
 ````
-if(buttons.length === 0 || !button?.textContent?.includes("Pass 4 jours du 15 au 18 juin 2023 ")) {
+const text = 'Dimanche'
 ````
 
 Si la page est trop lente à charger et que le clic automatique pour dérouler les billets ne marche pas il est peut être nécessaire de mettre plus de temps d'attente :
