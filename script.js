@@ -96,7 +96,7 @@
         readySound.play();
     } else {
         console.log('refresh')
-        // refresh();
+        refresh();
     }
 
 
