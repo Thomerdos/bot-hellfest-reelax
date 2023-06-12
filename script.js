@@ -9,6 +9,8 @@
 (async function() {
     'use strict';
 
+    const text = 'Samedi'
+
     const readySound = new window.Howl({
         src: ['//freesound.org/data/previews/187/187404_635158-lq.mp3'],
         autoplay: false,
@@ -29,22 +31,24 @@
             return false
         }
 
-        const button = buttons[0]
-        if(buttons.length === 0 || !button?.textContent?.includes("Pass 4 jours du 15 au 18 juin 2023 ")) {
-            console.log("Pas de pass 4 jours");
+        let button
+        for (let item of buttons) {
+            console.log(item.textContent)
+            if(item.textContent.includes(text)) {
+               button = item
+             }
+        }
+
+
+        if(!button) {
+            console.log(`Texte "${text}" introuvable`);
             return false
         }
-        await buttons[0].scrollIntoView()
+        await button.scrollIntoView()
         console.log(button)
 
-        // // No available "Add to Cart" buttons. Cool down and refresh.
-        // if (!buttons.length) {
-        //     console.log("Pas de billets disponibles");
-        //     return anyClicked;
-        // }
-
-        await buttons[0].click()
-        console.log("Premier lien cliqué.");
+        await button.click()
+        console.log("Accordéon cliqué.");
 
         await sleep(500)
 
@@ -92,7 +96,7 @@
         readySound.play();
     } else {
         console.log('refresh')
-      refresh();
+        // refresh();
     }
 
 
